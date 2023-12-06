@@ -4,133 +4,216 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="Favicon.svg">
   <link rel="stylesheet" href="style.css">
-  <title>Orçamento marcenaria</title>
+  <title>Orçamento - Zayit Planejados</title>
 </head>
 
 <body>
-  <h1>ORÇAMENTO MARCENARIA</h1>
+  <h1>Zayit Planejados | Orçamento</h1>
+  <div class="container-grid">
+    <div class="col-1">
 
-  <div class="container">
+      <div class="container" style="overflow-y:scroll; height:685px;">
 
-    <div class="coluna1">
-      <h2>MDF</h2>
-      <ul class="lista">
-        <li class="item">
-          <label for="mdf-tx-15">MDF TX Branco 15mm</label>
-          <input type="number" name="mdf-tx-15" id="mdf-tx-15">
-        </li>
-        <li class="item">
-          <label for="mdf-tx-18">MDF TX Branco 18mm</label>
-          <input type="number" name="mdf-tx-18" id="mdf-tx-18">
-        </li>
-        <li class="item">
-          <label for="mdf-tx-6">MDF TX Branco 6mm</label>
-          <input type="number" name="mdf-tx-6" id="mdf-tx-6">
-        </li>
-        <li class="item">
-          <label for="mdf-ca-15">MDF Carvalho Avelã 15mm</label>
-          <input type="number" name="mdf-ca-15" id="mdf-ca-15">
-        </li>
-      </ul>
+        <div class="coluna1">
+          <h2>MDF</h2>
+          <ul class="lista mdf">
+            <li class="item">
+              <label for="mdf-tx-15">MDF TX Branco 15mm</label>
+              <input type="number" name="mdf-tx-15" id="mdf-tx-15">
+            </li>
+            <li class="item">
+              <label for="mdf-tx-18">MDF TX Branco 18mm</label>
+              <input type="number" name="mdf-tx-18" id="mdf-tx-18">
+            </li>
+            <li class="item">
+              <label for="mdf-tx-6">MDF TX Branco 6mm</label>
+              <input type="number" name="mdf-tx-6" id="mdf-tx-6">
+            </li>
+            <li class="item">
+              <label for="mdf-ca-15">MDF Carvalho Avelã 15mm</label>
+              <input type="number" name="mdf-ca-15" id="mdf-ca-15">
+            </li>
+          </ul>
 
-      <h2>CORREDIÇAS</h2>
-      <ul class="lista">
-        <li class="item">
-          <label for="cr-lt-300">Light 300mm</label>
-          <input type="number" name="cr-lt-300" id="cr-lt-300">
-        </li>
-        <li class="item">
-          <label for="cr-lt-400">Light 400mm</label>
-          <input type="number" name="cr-lt-400" id="cr-lt-400">
-        </li>
-        <li class="item">
-          <label for="cr-lt-450">Light 450mm</label>
-          <input type="number" name="cr-lt-450" id="cr-lt-450">
-        </li>
-        <li class="item">
-          <label for="cr-lt-500">Light 500mm</label>
-          <input type="number" name="cr-lt-500" id="cr-lt-500">
-        </li>
-        <li class="item">
-          <label for="cr-lg-500">Larga 500mm</label>
-          <input type="number" name="cr-lg-500" id="cr-lg-500">
-        </li>
-        <li class="item">
-          <label for="cr-lg-550">Larga 550mm</label>
-          <input type="number" name="cr-lg-550" id="cr-lg-550">
-        </li>
-        <li class="item">
-          <label for="cr-lg-600">Larga 600mm</label>
-          <input type="number" name="cr-lg-600" id="cr-lg-600">
-        </li>
-      </ul>
+          <h2>CORREDIÇAS & DOBRAD.</h2>
+          <ul class="lista corredicas">
+            <li class="item">
+              <label for="cr-lt-250">Corrediça Light 250mm</label>
+              <input type="number" name="cr-lt-250" id="cr-lt-250">
+            </li>
+            <li class="item">
+              <label for="cr-lt-300">Corrediça Light 300mm</label>
+              <input type="number" name="cr-lt-300" id="cr-lt-300">
+            </li>
+            <li class="item">
+              <label for="cr-lt-400">Corrediça Light 400mm</label>
+              <input type="number" name="cr-lt-400" id="cr-lt-400">
+            </li>
+            <li class="item">
+              <label for="cr-lt-450">Corrediça Light 450mm</label>
+              <input type="number" name="cr-lt-450" id="cr-lt-450">
+            </li>
+            <li class="item">
+              <label for="cr-lt-500">Corrediça Light 500mm</label>
+              <input type="number" name="cr-lt-500" id="cr-lt-500">
+            </li>
+            <li class="item">
+              <label for="cr-lt-25">Corrediça Light 25cm</label>
+              <input type="number" name="cr-lt-25" id="cr-lt-25">
+            </li>
+            <li class="item">
+              <label for="cr-lt-40">Corrediça Light 40cm</label>
+              <input type="number" name="cr-lt-40" id="cr-lt-40">
+            </li>
+            <li class="item">
+              <label for="cr-lg-500">Corrediça Larga 500mm</label>
+              <input type="number" name="cr-lg-500" id="cr-lg-500">
+            </li>
+            <li class="item">
+              <label for="cr-lg-550">Corrediça Larga 550mm</label>
+              <input type="number" name="cr-lg-550" id="cr-lg-550">
+            </li>
+            <li class="item">
+              <label for="cr-lg-600">Corrediça Larga 600mm</label>
+              <input type="number" name="cr-lg-600" id="cr-lg-600">
+            </li>
+            <li class="item">
+              <label for="db-rt-35">Dobradiça Reta 35mm</label>
+              <input type="number" name="db-rt-35" id="db-rt-35">
+            </li>
+            <li class="item">
+              <label for="db-ps-35">Dobradiça Pressão 35mm</label>
+              <input type="number" name="db-ps-35" id="db-ps-35">
+            </li>
+          </ul>
+
+          <h2>PUXADORES</h2>
+          <ul class="puxadores lista">
+            <li class="item">
+              <label for="px-al-96">Puxador Alumínio 96</label>
+              <input type="number" name="px-al-96" id="px-al-96">
+            </li>
+            <li class="item">
+              <label for="px-al-128">Puxador Alumínio 128</label>
+              <input type="number" name="px-al-128" id="px-al-128">
+            </li>
+            <li class="item">
+              <label for="px-crm">Puxador Zac Unufu Cromado</label>
+              <input type="number" name="px-crm" id="px-crm">
+            </li>
+          </ul>
+        </div>
+
+        <div class="coluna2">
+          <H2>FITAS</H2>
+          <ul class="lista fitas">
+            <li class="item">
+              <label for="ft-tx-22">Fita Branca TX 22</label>
+              <input type="number" name="ft-tx-22" id="ft-tx-22">
+            </li>
+            <li class="item">
+              <label for="ft-tx-35">Fita Branca TX 35</label>
+              <input type="number" name="ft-tx-35" id="ft-tx-35">
+            </li>
+            <li class="item">
+              <label for="ft-tx-45">Fita Branca TX 45</label>
+              <input type="number" name="ft-tx-45" id="ft-tx-45">
+            </li>
+            <li class="item">
+              <label for="ft-tx-60">Fita Branca TX 60</label>
+              <input type="number" name="ft-tx-60" id="ft-tx-60">
+            </li>
+            <li class="item">
+              <label for="ft-bt-md">Fita Madeirado 22mm</label>
+              <input type="number" name="ft-bt-md" id="ft-bt-md">
+            </li>
+            <li class="item">
+              <label for="ftg-bd">Fitagem Borda</label>
+              <input type="number" name="ftg-bd" id="ftg-bd">
+            </li>
+          </ul>
+
+          <h2>SAPATINHAS</h2>
+          <ul class="lista sapatinhas">
+            <li class="item">
+              <label for="spt-pq">Pequena</label>
+              <input type="number" name="spt-pq" id="spt-pq">
+            </li>
+            <li class="item">
+              <label for="spt-md">Média</label>
+              <input type="number" name="spt-md" id="spt-md">
+            </li>
+            <li class="item">
+              <label for="spq-gd">Grande</label>
+              <input type="number" name="spq-gd" id="spq-gd">
+            </li>
+          </ul>
+
+          <h2>OUTROS ITENS</h2>
+          <ul class="lista outros">
+            <li class="item">
+              <label for="otr-cola">Cola Pequena</label>
+              <input type="number" name="otr-cola" id="otr-cola">
+            </li>
+            <li class="item">
+              <label for="otr-rodizio">Rodízio</label>
+              <input type="number" name="otr-rodizio" id="otr-rodizio">
+            </li>
+            <li class="item">
+              <label for="otr-prfs">Parafusos</label>
+              <input type="number" name="otr-prfs" id="otr-prfs">
+            </li>
+            <li class="item">
+              <label for="crt-tr">Corte tira</label>
+              <input type="number" name="crt-tr" id="crt-tr">
+            </li>
+            <li class="item">
+              <label for="crt-pc">Corte peça</label>
+              <input type="number" name="crt-pc" id="crt-pc">
+            </li>
+            <li class="item">
+              <label for="tf-br-13">Tapa Furo branco 13mm</label>
+              <input type="number" name="tf-br-13" id="tf-br-13">
+            </li>
+            <li class="item">
+              <label for="tf-md-13">Tapa Furo madeirado 13mm</label>
+              <input type="number" name="tf-md-13" id="tf-md-13">
+            </li>
+          </ul>
+
+          <h2>CANTONEIRAS</h2>
+          <ul class="cantoneiras lista">
+            <li class="item">
+              <label for="cnt-cp">Cantoneira com capa</label>
+              <input type="number" name="cnt-cp" id="cnt-cp">
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+      <footer>
+        <a href="./" class="calcular">CALCULAR 🡺</a>
+      </footer>
     </div>
 
-    <div class="coluna2">
-      <H2>FITAS</H2>
-      <ul>
-        <li class="item">
-          <label for="ft-tx-22">Fita Branca TX 22</label>
-          <input type="number" name="ft-tx-22" id="ft-tx-22">
-        </li>
-        <li class="item">
-          <label for="ft-tx-35">Fita Branca TX 35</label>
-          <input type="number" name="ft-tx-35" id="ft-tx-35">
-        </li>
-        <li class="item">
-          <label for="ft-tx-45">Fita Branca TX 45</label>
-          <input type="number" name="ft-tx-45" id="ft-tx-45">
-        </li>
-        <li class="item">
-          <label for="ft-tx-60">Fita Branca TX 60</label>
-          <input type="number" name="ft-tx-60" id="ft-tx-60">
-        </li>
+    <div class="col-2 ativar">
+      <h2>ITENS SELECIONADOS</h2>
+      <ul style="overflow-y:scroll; height:550px;" class="itens-selec">
+
       </ul>
 
-      <h2>SAPATINHAS</h2>
-      <ul>
-        <li class="item">
-          <label for="spt-pq">Pequena</label>
-          <input type="number" name="spt-pq" id="spt-pq">
-        </li>
-        <li class="item">
-          <label for="spt-md">Média</label>
-          <input type="number" name="spt-md" id="spt-md">
-        </li>
-        <li class="item">
-          <label for="spq-gd">Grande</label>
-          <input type="number" name="spq-gd" id="spq-gd">
-        </li>
-      </ul>
-
-      <h2>OUTROS ITENS</h2>
-      <ul class="lista">
-        <li class="item">
-          <label for="otr-cola">Cola Pequena</label>
-          <input type="number" name="otr-cola" id="otr-cola">
-        </li>
-        <li class="item">
-          <label for="otr-rodizio">Rodízio</label>
-          <input type="number" name="otr-rodizio" id="otr-rodizio">
-        </li>
-        <li class="item">
-          <label for="otr-prfs">Parafusos</label>
-          <input type="number" name="otr-prfs" id="otr-prfs">
-        </li>
-      </ul>
+      <div class="resultado-container">
+        <p>🡻 Total com frete <span>R$ 10200,00</span></p>
+        <p>🡻 Total sem frete <span>R$ 10000,00</span></p>
+        <a href="./" class="novo">🡸 NOVO ORÇAMENTO</a>
+      </div>
     </div>
   </div>
 
-  <footer>
-    <div class="frete">
-      <label for="frete">Frete?</label>
-      <input type="checkbox" name="frete" id="frete">
-    </div>
-
-    <a href="./">CALCULAR ➤</a>
-  </footer>
-
+  <script src="./script.js"></script>
 
 </body>
 
