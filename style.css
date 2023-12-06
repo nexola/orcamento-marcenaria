@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap");
+
+* {
+  margin: 0;
+  font-family: "Outfit", Arial, Helvetica, sans-serif;
+}
+
+html {
+  font-size: 22px;
+}
+
+body {
+  background-color: #f1f1f1;
+  position: relative;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto;
+  max-width: 800px;
+  gap: 40px;
+  padding-left: 120px;
+  align-content: space-between;
+}
+
+ul,
+li,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+.ul {
+  list-style: none;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+li:nth-child(even) {
+  background-color: #b6b6b6;
+}
+
+h1 {
+  padding: 40px 0px 40px 120px;
+  background: linear-gradient(180deg, #262626 0%, #000 100%);
+  font-family: "Urbanist", sans-serif;
+  color: #fff;
+  box-shadow: inset 0 0 2px black;
+}
+
+h2 {
+  border-bottom: 2px solid #261200;
+  padding: 20px 0 0 0;
+}
+
+input {
+  width: 60px;
+  height: 24px;
+  font-size: 1rem;
+}
+
+.frete {
+  display: flex;
+  align-items: center;
+}
+
+.frete label {
+  font-size: 1.5rem;
+}
+
+.frete input {
+  border: 4px solid #261200;
+}
+
+a {
+  text-decoration: none;
+  color: #261200;
+  padding: 8px 16px;
+  border-bottom: 4px solid #261200;
+}
+
+a:hover {
+  color: #793a02;
+  border-bottom: 3px solid #793a02;
+  transition: ease-in-out;
+}
+
+footer {
+  display: flex;
+  align-items: baseline;
+  margin-left: 120px;
+  margin-top: 40px;
+  max-width: 800px;
+  justify-content: space-between;
+}
