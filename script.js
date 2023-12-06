@@ -1,3 +1,4 @@
+// Preços de cada material
 let valoresMateriais = {
   "mdf-tx-15": 185,
   "mdf-tx-18": 260,
@@ -37,11 +38,14 @@ let valoresMateriais = {
   "cnt-cp": 14,
 };
 
+// Elementos
 const btnCalcular = document.querySelector(".calcular");
 const htmlContainerResultado = document.querySelector(".col-2");
 const htmlItens = document.querySelectorAll(".item input[type='number']");
 const btnNovo = document.querySelector(".novo");
 const htmlItensSelec = document.querySelector(".itens-selec");
+const htmlComFrete = document.querySelector(".com-frete");
+const htmlSemFrete = document.querySelector(".sem-frete");
 
 btnCalcular.addEventListener("click", (e) => {
   e.preventDefault();
@@ -50,30 +54,53 @@ btnCalcular.addEventListener("click", (e) => {
   // Adicionando itens na lista de orçamento
   htmlItens.forEach((item) => {
     if (item.value != 0 && item.value != null) {
+      // Multiplicando a quantidade inserida pelo valor no obj e adicionando a somaTotal
       let atributoNome = item.getAttribute("name");
       somaTotal += valoresMateriais[`${atributoNome}`] * Number(item.value);
-
+      // Adicionando o item e quantidade visualmente a lista de itens selecionados
       let nome = document.querySelector(
         `label[for='${atributoNome}']`
       ).innerHTML;
       let quantidade = item.value;
-
       let liEle = document.createElement("li");
       let textEl = document.createTextNode(`${nome} `);
       let spanEle = document.createElement("span");
       let textSpan = document.createTextNode(`x${quantidade}`);
-
+      // Adicionando-os a um elemento li
       spanEle.appendChild(textSpan);
       liEle.appendChild(textEl);
       liEle.appendChild(spanEle);
       htmlItensSelec.appendChild(liEle);
     }
   });
-
+  // Mostrando visualmente o valor total, com e sem o frete
+  // Com frete
+  let spanFrete = document.createElement("span");
+  let textFrete = document.createTextNode(`R$ ${somaTotal + 200}`);
+  spanFrete.appendChild(textFrete);
+  htmlComFrete.appendChild(spanFrete);
+  // Sem frete
+  let spanSemFrete = document.createElement("span");
+  let textSemFrete = document.createTextNode(`R$ ${somaTotal}`);
+  spanSemFrete.appendChild(textSemFrete);
+  htmlSemFrete.appendChild(spanSemFrete);
+  // Revelando o container de resultado do orçamento
   htmlContainerResultado.classList.remove("ativar");
 });
 
+// Botão de reset
 btnNovo.addEventListener("click", (e) => {
   e.preventDefault();
+  // Esconde novamente o container de resultado
   htmlContainerResultado.classList.add("ativar");
+  // Voltando os elementos ao estado original
+  htmlItensSelec.innerText = "";
+  htmlComFrete.innerText = "🡻 Total com frete ";
+  htmlSemFrete.innerText = "🡻 Total sem frete ";
+  // Zerando os inputs
+  htmlItens.forEach((item) => {
+    item.value = null;
+  });
+
+  somaTotal = 0;
 });
