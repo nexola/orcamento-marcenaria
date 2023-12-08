@@ -45,10 +45,13 @@ body {
 }
 
 .col-2 {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
   background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
   color: #fff;
   padding-left: 40px;
-  max-width: 800px;
   border-radius: 0 0 4px;
 }
 
@@ -217,5 +220,10 @@ footer {
 }
 
 .ativar {
+  opacity: 1;
+  height: auto;
+}
+
+.esconder {
   display: none;
 }

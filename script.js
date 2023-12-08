@@ -32,7 +32,7 @@ let valoresMateriais = {
   "otr-rodizio": 1,
   "otr-prfs": 6,
   "crt-tr": 2.5,
-  "crt-tr": 3.5,
+  "crt-pc": 3.5,
   "tf-br-13": 3.99,
   "tf-md-13": 5,
   "cnt-cp": 14,
@@ -47,6 +47,22 @@ const htmlItensSelec = document.querySelector(".itens-selec");
 const htmlComFrete = document.querySelector(".com-frete");
 const htmlSemFrete = document.querySelector(".sem-frete");
 
+// Funções auxiliares
+const zerarInputs = function () {
+  htmlItens.forEach((item) => {
+    item.value = null;
+  });
+};
+
+const esconderBtn = function () {
+  btnCalcular.style.display = "none";
+};
+
+const mostrarBtn = function () {
+  btnCalcular.style.display = "block";
+};
+
+// Botão calcular
 btnCalcular.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -76,31 +92,35 @@ btnCalcular.addEventListener("click", (e) => {
   // Mostrando visualmente o valor total, com e sem o frete
   // Com frete
   let spanFrete = document.createElement("span");
-  let textFrete = document.createTextNode(`R$ ${somaTotal + 200}`);
+  let textFrete = document.createTextNode(
+    `R$ ${somaTotal > 0 ? (somaTotal + 200).toFixed(2) : somaTotal.toFixed(2)}`
+  );
   spanFrete.appendChild(textFrete);
   htmlComFrete.appendChild(spanFrete);
   // Sem frete
   let spanSemFrete = document.createElement("span");
-  let textSemFrete = document.createTextNode(`R$ ${somaTotal}`);
+  let textSemFrete = document.createTextNode(`R$ ${somaTotal.toFixed(2)}`);
   spanSemFrete.appendChild(textSemFrete);
   htmlSemFrete.appendChild(spanSemFrete);
   // Revelando o container de resultado do orçamento
-  htmlContainerResultado.classList.remove("ativar");
+  htmlContainerResultado.classList.add("ativar");
+  // Limpando os inputs
+  zerarInputs();
+  esconderBtn();
 });
 
-// Botão de reset
+// Botão reset
 btnNovo.addEventListener("click", (e) => {
   e.preventDefault();
   // Esconde novamente o container de resultado
-  htmlContainerResultado.classList.add("ativar");
+  htmlContainerResultado.classList.remove("ativar");
   // Voltando os elementos ao estado original
   htmlItensSelec.innerText = "";
   htmlComFrete.innerText = "🡻 Total com frete ";
   htmlSemFrete.innerText = "🡻 Total sem frete ";
-  // Zerando os inputs
-  htmlItens.forEach((item) => {
-    item.value = null;
-  });
 
   somaTotal = 0;
+
+  mostrarBtn();
+  zerarInputs();
 });
