@@ -1,43 +1,3 @@
-// Preços de cada material
-let valoresMateriais = {
-  "mdf-tx-15": 185,
-  "mdf-tx-18": 260,
-  "mdf-tx-6": 150,
-  "mdf-ca-15": 500,
-  "cr-lt-250": 16.29,
-  "cr-lt-300": 1,
-  "cr-lt-400": 16.9,
-  "cr-lt-450": 1,
-  "cr-lt-500": 1,
-  "cr-lt-25": 9,
-  "cr-lt-40": 14,
-  "cr-lg-500": 1,
-  "cr-lg-550": 1,
-  "cr-lg-600": 1,
-  "db-rt-35": 2.53,
-  "db-ps-35": 2,
-  "px-al-96": 8.5,
-  "px-al-128": 10.5,
-  "px-crm": 7.5,
-  "ft-tx-22": 30,
-  "ft-tx-35": 42,
-  "ft-tx-45": 1,
-  "ft-tx-60": 1,
-  "ft-bt-md": 42,
-  "ftg-bd": 2.99,
-  "spt-pq": 2.5,
-  "spt-md": 4.5,
-  "spq-gd": 1,
-  "otr-cola": 26,
-  "otr-rodizio": 1,
-  "otr-prfs": 6,
-  "crt-tr": 2.5,
-  "crt-pc": 3.5,
-  "tf-br-13": 3.99,
-  "tf-md-13": 5,
-  "cnt-cp": 14,
-};
-
 // Elementos
 const btnCalcular = document.querySelector(".calcular");
 const htmlContainerResultado = document.querySelector(".col-2");
@@ -46,8 +6,29 @@ const btnNovo = document.querySelector(".novo");
 const htmlItensSelec = document.querySelector(".itens-selec");
 const htmlComFrete = document.querySelector(".com-frete");
 const htmlSemFrete = document.querySelector(".sem-frete");
+const htmlInicial = document.querySelectorAll(".lista");
 
 // Funções auxiliares
+const criarLi = function (codigo, nome) {
+  const liEle = document.createElement("li");
+  liEle.classList.add("item");
+  // label
+  const labelEle = document.createElement("label");
+  labelEle.setAttribute("for", codigo);
+  const labelTxt = document.createTextNode(nome);
+  labelEle.appendChild(labelTxt);
+  // input
+  const inputEle = document.createElement("input");
+  inputEle.setAttribute("type", "number");
+  inputEle.setAttribute("name", codigo);
+  inputEle.setAttribute("id", codigo);
+
+  liEle.appendChild(labelEle);
+  liEle.appendChild(inputEle);
+
+  return liEle;
+};
+
 const zerarInputs = function () {
   htmlItens.forEach((item) => {
     item.value = null;
@@ -61,6 +42,20 @@ const esconderBtn = function () {
 const mostrarBtn = function () {
   btnCalcular.style.display = "block";
 };
+
+// Criando lista inicial
+fetch("itens.json").then((response) => {
+  response.json().then((dados) => {
+    dados.itens.map((item) => {
+      htmlInicial.forEach((elemento) => {
+        if (item.codigo.substring(0, 3) === elemento.id) {
+          const liEle = criarLi(item.codigo, item.nome);
+          elemento.appendChild(liEle);
+        }
+      });
+    });
+  });
+});
 
 // Botão calcular
 btnCalcular.addEventListener("click", (e) => {

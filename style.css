@@ -34,6 +34,7 @@ body {
 .container-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  height: 791px;
 }
 
 .container {
@@ -52,7 +53,6 @@ body {
   background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
   color: #fff;
   padding-left: 40px;
-  border-radius: 0 0 4px;
 }
 
 .col-2 li:nth-child(even) {

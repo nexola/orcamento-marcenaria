@@ -1,0 +1,139 @@
+{
+  "itens": [
+    {
+      "codigo": "mdf-tx-15",
+      "nome": "MDF TX Branco 15mm",
+      "valor": 185
+    },
+    {
+      "codigo": "mdf-tx-18",
+      "nome": "MDF TX Branco 18mm",
+      "valor": 260
+    },
+    {
+      "codigo": "mdf-tx-6",
+      "nome": "MDF TX Branco 6mm",
+      "valor": 150
+    },
+    {
+      "codigo": "mdf-ca-15",
+      "nome": "MDF Carvalho Avelã 15mm",
+      "valor": 500
+    },
+    {
+      "codigo": "ced-lt-250",
+      "nome": "Corrediça Light 250mm",
+      "valor": 16.29
+    },
+    {
+      "codigo": "ced-lt-400",
+      "nome": "Corrediça Light 400mm",
+      "valor": 16.9
+    },
+    {
+      "codigo": "ced-lt-25",
+      "nome": "Corrediça Light 25cm",
+      "valor": 9
+    },
+    {
+      "codigo": "ced-lt-40",
+      "nome": "Corrediça Light 40cm",
+      "valor": 14
+    },
+    {
+      "codigo": "ced-rt-35",
+      "nome": "Dobradiça Reta 35mm",
+      "valor": 2.53
+    },
+    {
+      "codigo": "ced-ps-35",
+      "nome": "Dobradiça Pressão 35mm",
+      "valor": 2
+    },
+    {
+      "codigo": "pxd-al-96",
+      "nome": "Puxador Alumínio 96",
+      "valor": 8.5
+    },
+    {
+      "codigo": "pxd-al-128",
+      "nome": "Puxador Alumínio 128",
+      "valor": 10.5
+    },
+    {
+      "codigo": "pxd-crm",
+      "nome": "Puxador Zac Unufu Cromado",
+      "valor": 7.5
+    },
+    {
+      "codigo": "fta-tx-22",
+      "nome": "Fita Branca TX 22",
+      "valor": 30
+    },
+    {
+      "codigo": "fta-tx-35",
+      "nome": "Fita Branca TX 35",
+      "valor": 42
+    },
+    {
+      "codigo": "fta-bt-md",
+      "nome": "Fita Madeirado 22mm",
+      "valor": 42
+    },
+    {
+      "codigo": "fta-bd",
+      "nome": "Fitagem Borda",
+      "valor": 2.99
+    },
+    {
+      "codigo": "spt-pq",
+      "nome": "Sapatinha Pequena",
+      "valor": 2.5
+    },
+    {
+      "codigo": "spt-md",
+      "nome": "Sapatinha Média",
+      "valor": 4.5
+    },
+    {
+      "codigo": "otr-cola",
+      "nome": "Cola Pequena",
+      "valor": 26
+    },
+    {
+      "codigo": "otr-prfs",
+      "nome": "Parafusos",
+      "valor": 6
+    },
+    {
+      "codigo": "otr-cttr",
+      "nome": "Corte tira",
+      "valor": 2.5
+    },
+    {
+      "codigo": "otr-ctpc",
+      "nome": "Corte peça",
+      "valor": 3.5
+    },
+    {
+      "codigo": "otr-tfbr",
+      "nome": "Tapa Furo branco 13mm",
+      "valor": 3.99
+    },
+    {
+      "codigo": "otr-tfmd",
+      "nome": "Tapa Furo madeirado 13mm",
+      "valor": 5
+    },
+    {
+      "codigo": "cnt-cp",
+      "nome": "Cantoneira com capa",
+      "valor": 14
+    },
+    {
+      "codigo": "cnt-jl",
+      "nome": "Pingoleta Cegueta",
+      "valor": 24
+    }
+  ]
+}
