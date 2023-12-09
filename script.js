@@ -65,48 +65,56 @@ const mostrarBtn = function () {
 // Botão calcular
 btnCalcular.addEventListener("click", (e) => {
   e.preventDefault();
-
-  let somaTotal = 0;
-  // Adicionando itens na lista de orçamento
-  htmlItens.forEach((item) => {
-    if (item.value != 0 && item.value != null) {
-      // Multiplicando a quantidade inserida pelo valor no obj e adicionando a somaTotal
-      let atributoNome = item.getAttribute("name");
-      somaTotal += valoresMateriais[`${atributoNome}`] * Number(item.value);
-      // Adicionando o item e quantidade visualmente a lista de itens selecionados
-      let nome = document.querySelector(
-        `label[for='${atributoNome}']`
-      ).innerHTML;
-      let quantidade = item.value;
-      let liEle = document.createElement("li");
-      let textEl = document.createTextNode(`${nome} `);
-      let spanEle = document.createElement("span");
-      let textSpan = document.createTextNode(`x${quantidade}`);
-      // Adicionando-os a um elemento li
-      spanEle.appendChild(textSpan);
-      liEle.appendChild(textEl);
-      liEle.appendChild(spanEle);
-      htmlItensSelec.appendChild(liEle);
-    }
-  });
-  // Mostrando visualmente o valor total, com e sem o frete
-  // Com frete
-  let spanFrete = document.createElement("span");
-  let textFrete = document.createTextNode(
-    `R$ ${somaTotal > 0 ? (somaTotal + 200).toFixed(2) : somaTotal.toFixed(2)}`
-  );
-  spanFrete.appendChild(textFrete);
-  htmlComFrete.appendChild(spanFrete);
-  // Sem frete
-  let spanSemFrete = document.createElement("span");
-  let textSemFrete = document.createTextNode(`R$ ${somaTotal.toFixed(2)}`);
-  spanSemFrete.appendChild(textSemFrete);
-  htmlSemFrete.appendChild(spanSemFrete);
-  // Revelando o container de resultado do orçamento
-  htmlContainerResultado.classList.add("ativar");
-  // Limpando os inputs
-  zerarInputs();
-  esconderBtn();
+  // Verificando se existe algum input preenchido
+  const inputsHtml = Array.from(htmlItens)
+    .map((x) => x.value)
+    .filter((x) => x > 0);
+  // Se sim, o botão executa sua função
+  if (inputsHtml.length !== 0) {
+    let somaTotal = 0;
+    // Adicionando itens na lista de orçamento
+    htmlItens.forEach((item) => {
+      if (item.value != 0 && item.value != null) {
+        // Multiplicando a quantidade inserida pelo valor no obj e adicionando a somaTotal
+        let atributoNome = item.getAttribute("name");
+        somaTotal += valoresMateriais[`${atributoNome}`] * Number(item.value);
+        // Adicionando o item e quantidade visualmente a lista de itens selecionados
+        let nome = document.querySelector(
+          `label[for='${atributoNome}']`
+        ).innerHTML;
+        let quantidade = item.value;
+        let liEle = document.createElement("li");
+        let textEl = document.createTextNode(`${nome} `);
+        let spanEle = document.createElement("span");
+        let textSpan = document.createTextNode(`x${quantidade}`);
+        // Adicionando-os a um elemento li
+        spanEle.appendChild(textSpan);
+        liEle.appendChild(textEl);
+        liEle.appendChild(spanEle);
+        htmlItensSelec.appendChild(liEle);
+      }
+    });
+    // Mostrando visualmente o valor total, com e sem o frete
+    // Com frete
+    let spanFrete = document.createElement("span");
+    let textFrete = document.createTextNode(
+      `R$ ${
+        somaTotal > 0 ? (somaTotal + 200).toFixed(2) : somaTotal.toFixed(2)
+      }`
+    );
+    spanFrete.appendChild(textFrete);
+    htmlComFrete.appendChild(spanFrete);
+    // Sem frete
+    let spanSemFrete = document.createElement("span");
+    let textSemFrete = document.createTextNode(`R$ ${somaTotal.toFixed(2)}`);
+    spanSemFrete.appendChild(textSemFrete);
+    htmlSemFrete.appendChild(spanSemFrete);
+    // Revelando o container de resultado do orçamento
+    htmlContainerResultado.classList.add("ativar");
+    // Limpando os inputs
+    zerarInputs();
+    esconderBtn();
+  }
 });
 
 // Botão reset
