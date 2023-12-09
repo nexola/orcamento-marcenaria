@@ -1,7 +1,8 @@
+import ItensJSON from "./itens.json" assert { type: "json" };
+
 // Elementos
 const btnCalcular = document.querySelector(".calcular");
 const htmlContainerResultado = document.querySelector(".col-2");
-const htmlItens = document.querySelectorAll(".item input[type='number']");
 const btnNovo = document.querySelector(".novo");
 const htmlItensSelec = document.querySelector(".itens-selec");
 const htmlComFrete = document.querySelector(".com-frete");
@@ -43,19 +44,21 @@ const mostrarBtn = function () {
   btnCalcular.style.display = "block";
 };
 
+let htmlItens;
+
 // Criando lista inicial
-fetch("itens.json").then((response) => {
-  response.json().then((dados) => {
-    dados.itens.map((item) => {
-      htmlInicial.forEach((elemento) => {
-        if (item.codigo.substring(0, 3) === elemento.id) {
-          const liEle = criarLi(item.codigo, item.nome);
-          elemento.appendChild(liEle);
-        }
-      });
-    });
+Array.from(ItensJSON).map((item) => {
+  htmlInicial.forEach((elemento) => {
+    if (item.codigo.substring(0, 3) === elemento.id) {
+      const liEle = criarLi(item.codigo, item.nome);
+      elemento.appendChild(liEle);
+      const itensNode = document.querySelectorAll(".item input[type='number']");
+      htmlItens = itensNode;
+    }
   });
 });
+
+let somaTotal = 0;
 
 // Botão calcular
 btnCalcular.addEventListener("click", (e) => {
@@ -66,18 +69,23 @@ btnCalcular.addEventListener("click", (e) => {
     .filter((x) => x > 0);
   // Se sim, o botão executa sua função
   if (inputsHtml.length !== 0) {
-    let somaTotal = 0;
     // Adicionando itens na lista de orçamento
     htmlItens.forEach((item) => {
       if (item.value != 0 && item.value != null) {
         // Multiplicando a quantidade inserida pelo valor no obj e adicionando a somaTotal
         let atributoNome = item.getAttribute("name");
-        somaTotal += valoresMateriais[`${atributoNome}`] * Number(item.value);
+        let quantidade = item.value;
+        // Somando os valores selecionados
+        Array.from(ItensJSON).forEach((elemento) => {
+          if (elemento.codigo === atributoNome) {
+            somaTotal += elemento.valor * Number(quantidade);
+          }
+        });
         // Adicionando o item e quantidade visualmente a lista de itens selecionados
         let nome = document.querySelector(
           `label[for='${atributoNome}']`
         ).innerHTML;
-        let quantidade = item.value;
+
         let liEle = document.createElement("li");
         let textEl = document.createTextNode(`${nome} `);
         let spanEle = document.createElement("span");
