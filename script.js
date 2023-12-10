@@ -30,6 +30,21 @@ const criarLi = function (codigo, nome) {
   return liEle;
 };
 
+const carregarItens = function () {
+  Array.from(ItensJSON).map((item) => {
+    htmlInicial.forEach((elemento) => {
+      if (item.codigo.substring(0, 3) === elemento.id) {
+        const liEle = criarLi(item.codigo, item.nome);
+        elemento.appendChild(liEle);
+        const itensNode = document.querySelectorAll(
+          ".item input[type='number']"
+        );
+        htmlItens = itensNode;
+      }
+    });
+  });
+};
+
 const zerarInputs = function () {
   htmlItens.forEach((item) => {
     item.value = null;
@@ -47,16 +62,7 @@ const mostrarBtn = function () {
 let htmlItens;
 
 // Criando lista inicial
-Array.from(ItensJSON).map((item) => {
-  htmlInicial.forEach((elemento) => {
-    if (item.codigo.substring(0, 3) === elemento.id) {
-      const liEle = criarLi(item.codigo, item.nome);
-      elemento.appendChild(liEle);
-      const itensNode = document.querySelectorAll(".item input[type='number']");
-      htmlItens = itensNode;
-    }
-  });
-});
+carregarItens();
 
 let somaTotal = 0;
 

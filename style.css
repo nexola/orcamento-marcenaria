@@ -37,11 +37,20 @@ body {
   height: 791px;
 }
 
+#index .container {
+  padding-left: 60px;
+}
+
+#view .container,
+#view footer {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
 .container {
   display: grid;
   grid-template-columns: auto auto;
   gap: 40px;
-  padding-left: 60px;
   align-content: space-between;
 }
 
@@ -111,6 +120,21 @@ li {
   justify-content: space-between;
   align-items: center;
   padding: 6px;
+}
+
+#view li {
+  justify-content: space-between;
+}
+
+#view span {
+  margin-left: auto;
+  margin-right: 40px;
+  color: #b30d09;
+}
+
+#view a:hover {
+  color: #555;
+  border-color: #555;
 }
 
 li:nth-child(even) {
@@ -203,6 +227,7 @@ a {
   color: #010101;
   padding: 8px 16px;
   border-bottom: 4px solid #010101;
+  cursor: pointer;
 }
 
 a:hover {
@@ -214,9 +239,15 @@ a:hover {
 footer {
   display: flex;
   align-items: baseline;
-  margin-left: 120px;
+  margin-left: 60px;
   margin-top: 40px;
-  justify-content: end;
+  justify-content: space-between;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+#view footer {
+  margin-top: 18px;
 }
 
 .ativar {
