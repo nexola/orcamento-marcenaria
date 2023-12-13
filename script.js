@@ -11,21 +11,10 @@ const htmlInicial = document.querySelectorAll(".lista");
 
 // Funções auxiliares
 const criarLi = function (codigo, nome) {
-  const liEle = document.createElement("li");
-  liEle.classList.add("item");
-  // label
-  const labelEle = document.createElement("label");
-  labelEle.setAttribute("for", codigo);
-  const labelTxt = document.createTextNode(nome);
-  labelEle.appendChild(labelTxt);
-  // input
-  const inputEle = document.createElement("input");
-  inputEle.setAttribute("type", "number");
-  inputEle.setAttribute("name", codigo);
-  inputEle.setAttribute("id", codigo);
-
-  liEle.appendChild(labelEle);
-  liEle.appendChild(inputEle);
+  const liEle = `<li class="item">
+  <label for="${codigo}">${nome}</label>
+  <input type="number" name="${codigo}" id="${codigo}">
+</li>`;
 
   return liEle;
 };
@@ -35,7 +24,7 @@ const carregarItens = function () {
     htmlInicial.forEach((elemento) => {
       if (item.codigo.substring(0, 3) === elemento.id) {
         const liEle = criarLi(item.codigo, item.nome);
-        elemento.appendChild(liEle);
+        elemento.insertAdjacentHTML("afterbegin", liEle);
         const itensNode = document.querySelectorAll(
           ".item input[type='number']"
         );
